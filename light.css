@@ -1,0 +1,52 @@
+@import "base.css";
+
+@media only screen and (min-width: 400px) and (max-width: 770px) {
+    #hero {
+        background-image: url(/images/figma-export/hero-light-sm.png);
+        height: 344px;
+    }
+
+    #description {
+        width: 324px;
+        margin-left: 80px;
+        font-size: 24px;
+    }
+
+    #description h5 {
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.04em;
+    }
+
+    header {
+        padding: 0 80px;
+    }
+}
+
+@media only screen and (min-width: 771px) {
+    #hero {
+        background-image: url(/images/figma-export/hero-light-lg.png);
+        height: 400px;
+    }
+
+    #description {
+        width: 448px;
+        margin-left: 80px;
+    }
+
+    #description h5 {
+        font-size: 32px;
+        line-height: 39px;
+        letter-spacing: -0.04em;
+    }
+
+    header {
+        padding: 0 80px;
+    }
+
+    .btn.primary {
+        width: 197px;
+        height: 46px;
+        font-size: 24px;
+    }
+}

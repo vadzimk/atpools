@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="408" height="110" viewBox="0 0 408 110">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 150px;
+        fill: #2472af;
+        font-family: "Glacial Indifference";
+      }
+
+      .cls-2 {
+        font-size: 58.333px;
+        fill: #068b90;
+        font-family: "Josefin Sans";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <image id="Background" width="408" height="110" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZgAAABuCAYAAAAahwXlAAABr0lEQVR4nO3VwQ3AIBDAsNL9dz6WIEJC9gT5Zc3MfABw2H87AIA3GQwACYMBIGEwACQMBoCEwQCQMBgAEgYDQMJgAEgYDAAJgwEgYTAAJAwGgITBAJAwGAASBgNAwmAASBgMAAmDASBhMAAkDAaAhMEAkDAYABIGA0DCYABIGAwACYMBIGEwACQMBoCEwQCQMBgAEgYDQMJgAEgYDAAJgwEgYTAAJAwGgITBAJAwGAASBgNAwmAASBgMAAmDASBhMAAkDAaAhMEAkDAYABIGA0DCYABIGAwACYMBIGEwACQMBoCEwQCQMBgAEgYDQMJgAEgYDAAJgwEgYTAAJAwGgITBAJAwGAASBgNAwmAASBgMAAmDASBhMAAkDAaAhMEAkDAYABIGA0DCYABIGAwACYMBIGEwACQMBoCEwQCQMBgAEgYDQMJgAEgYDAAJgwEgYTAAJAwGgITBAJAwGAASBgNAwmAASBgMAAmDASBhMAAkDAaAhMEAkDAYABIGA0DCYABIGAwACYMBIGEwACQMBoCEwQCQMBgAEgYDQMJgAEgYDAAJgwEgYTAAJAwGgMQGq2gE2BsSGXMAAAAASUVORK5CYII="/>
+  <text id="AT" class="cls-1" x="0.443" y="108.674">AT</text>
+  <text id="Pool_Spa" data-name="Pool &amp; Spa" class="cls-2" x="145.529" y="47.485">Pool &amp; Spa</text>
+  <text id="Services" class="cls-2" x="221.65" y="108.158">Services</text>
+</svg>

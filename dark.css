@@ -1,0 +1,11 @@
+@import "light.css";
+/*dark theme augmentation*/
+
+body {
+    color: #eee;
+    background: #121212;
+}
+
+#hero {
+    background-image: url(/images/figma-export/hero-dark-sm.png);
+}

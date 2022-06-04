@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AT Pool And Spa Services</title>
+    <link id="theme-link" rel="stylesheet" type="text/css" href="light.css"/>
+
+</head>
+<body>
+<header>
+    <img id="logo" src="/images/figma-export/mdi_pool-thermometer.svg" alt="logo">
+    <img id="mode"  src="/images/figma-export/mode-dark.svg" alt="mode">
+</header>
+<main>
+        <section id="hero" class="cover overlay">
+            <div id="description">
+                <h5>Our friendly staff will make your pool look fabulous!</h5>
+                <a class="btn primary" href="#contact-section">Contact</a>
+            </div>
+        </section>
+
+    <section id="services">
+        <div class="service">
+            <div><img src="/images/maintenance.jpg" alt="Maintenance"/></div>
+            <article class="section-description">
+                <h2>Pool Maintenance</h2>
+                <ul>
+                    <li>Maintain water level</li>
+                    <li>Test and adjust water chemistry</li>
+                    <li>Vacuum the bottom of the pool</li>
+                    <li>Brush walls</li>
+                    <li>Clean filters</li>
+                    <li>Equipment check</li>
+                </ul>
+            </article>
+        </div>
+        <div class="service">
+            <div><img src="/images/remodel.jpg" alt="Remodelling"/></div>
+            <article class="section-description">
+                <h2>Pool Remodelling</h2>
+                <ul>
+                    <li>Acid wash</li>
+                    <li>Pool tile</li>
+                    <li>Drain pool</li>
+                    <li>Plaster repair</li>
+                </ul>
+            </article>
+        </div>
+        <div class="service">
+            <div><img src="/images/installation.jpg" alt="Equipment"/></div>
+            <article class="section-description">
+                <h2>Equipment Installation</h2>
+                <ul>
+                    <li>Plumbing</li>
+                    <li>Filter</li>
+                    <li>Pump and motor</li>
+                    <li>Automation controls</li>
+                    <li>Lightning</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    <section id="service-areas">
+        <article class="section-description">
+            <h2>Our service areas</h2>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </article>
+        <div id="map container">
+            <!--            <iframe-->
+            <!--                    width="600" height="450"-->
+            <!--                    style="border:0" loading="lazy"-->
+            <!--                    src="https://www.openstreetmap.org/export/embed.html?bbox=79.84933018684386%2C6.90329331805479%2C79.85746264457703%2C6.908917042549519&marker=6.906105188659279%2C79.85339641571045&layers=ND"-->
+            <!--                    allow="layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';"-->
+            <!--            ></iframe>-->
+        </div>
+    </section>
+    <section id="contact">
+
+        <h3>Contact us and get a quote</h3>
+        <div class="form-control">
+            <form
+                    name="contact-form"
+                    method="POST"
+                    action="https://atpools.com/api/contact"
+            >
+
+                <label for="form-name">Name</label>
+                <input
+                        type="text"
+                        id="form-name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                />
+                <label for="form-email">Email</label>
+                <input
+                        type="email"
+                        id="form-email"
+                        name="email"
+                        placeholder="Enter your Email"
+                        required
+                />
+                <label for="form-phone">Phone</label>
+                <input
+                        type="number"
+                        id="form-phone"
+                        name="phone"
+                        placeholder="Enter your Phone Number"
+                />
+                <label for="form-message">Message</label>
+                <textarea
+                        id="form-message"
+                        name="message"
+                        required
+                        placeholder="Enter your message"
+                        rows="5"
+                        cols="50"
+                ></textarea>
+
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </section>
+</main>
+<footer>
+    <ul>
+        <li>Home</li>
+        <li>Services</li>
+        <li>Area</li>
+        <li>Contact</li>
+    </ul>
+</footer>
+</body>
+<script src="main.js"></script>
+</html>
