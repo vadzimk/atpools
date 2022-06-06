@@ -2,10 +2,11 @@
 /*dark theme augmentation*/
 
 body {
-    color: #eee;
+    color: #D9D9D9;
     background: #121212;
 }
 
 #hero {
     background-image: url(/images/figma-export/hero-dark-sm.png);
 }
+

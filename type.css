@@ -1,9 +1,33 @@
 /* h5 */
-h5{
+h5 {
     font-family: 'Kannada MN', serif;
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
     line-height: 22px;
     letter-spacing: -0.04em;
+}
+
+p, li {
+    font-family: 'Padauk', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+@media only screen and (min-width: 901px) {
+    h5 {
+        font-family: 'Kannada MN', serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: -0.04em;
+    }
+    p, li {
+        /* p-1 */
+        font-size: 20px;
+        line-height: 29px;
+    }
 }

@@ -3,9 +3,10 @@ const btn = document.querySelector('#mode')
 const theme = document.querySelector('#theme-link')
 const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
 
-if (preferDark.matches){
-  theme.href = 'dark.css'
-}
+// todo uncomment this
+// if (preferDark.matches){
+//   theme.href = 'dark.css'
+// }
 
 btn.addEventListener('click', function (){
 

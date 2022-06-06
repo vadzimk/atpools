@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AT Pool And Spa Services</title>
     <link id="theme-link" rel="stylesheet" type="text/css" href="light.css"/>
-
 </head>
 <body>
 <header>
     <img id="logo" src="/images/figma-export/mdi_pool-thermometer.svg" alt="logo">
-    <img id="mode"  src="/images/figma-export/mode-dark.svg" alt="mode">
+    <img id="mode" src="/images/figma-export/mode-dark.svg" alt="mode">
 </header>
 <main>
-        <section id="hero" class="cover overlay">
-            <div id="description">
-                <h5>Our friendly staff will make your pool look fabulous!</h5>
-                <a class="btn primary" href="#contact-section">Contact</a>
-            </div>
-        </section>
+    <section id="hero" class="cover overlay">
+        <div id="description">
+            <h5>Our friendly staff will make your pool look fabulous!</h5>
+            <a class="btn primary" href="#contact-section">Contact</a>
+        </div>
+    </section>
 
     <section id="services">
-        <div class="service">
-            <div><img src="/images/maintenance.jpg" alt="Maintenance"/></div>
+        <div class="service" id="maintenance">
+            <div class="feature-img" ></div>
             <article class="section-description">
-                <h2>Pool Maintenance</h2>
+                <h5>Pool Maintenance</h5>
                 <ul>
                     <li>Maintain water level</li>
                     <li>Test and adjust water chemistry</li>
@@ -35,10 +34,9 @@
                 </ul>
             </article>
         </div>
-        <div class="service">
-            <div><img src="/images/remodel.jpg" alt="Remodelling"/></div>
+        <div class="service" id="remodelling">
             <article class="section-description">
-                <h2>Pool Remodelling</h2>
+                <h5>Pool Remodelling</h5>
                 <ul>
                     <li>Acid wash</li>
                     <li>Pool tile</li>
@@ -46,11 +44,12 @@
                     <li>Plaster repair</li>
                 </ul>
             </article>
+            <div class="feature-img"></div>
         </div>
-        <div class="service">
-            <div><img src="/images/installation.jpg" alt="Equipment"/></div>
+        <div class="service" id="equipment">
+            <div class="feature-img"></div>
             <article class="section-description">
-                <h2>Equipment Installation</h2>
+                <h5>Equipment Installation</h5>
                 <ul>
                     <li>Plumbing</li>
                     <li>Filter</li>

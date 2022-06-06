@@ -1,6 +1,6 @@
 @import "base.css";
 
-@media only screen and (min-width: 400px) and (max-width: 770px) {
+@media only screen and (min-width: 600px) and (max-width: 900px) {
     #hero {
         background-image: url(/images/figma-export/hero-light-sm.png);
         height: 344px;
@@ -23,7 +23,7 @@
     }
 }
 
-@media only screen and (min-width: 771px) {
+@media only screen and (min-width: 901px) {
     #hero {
         background-image: url(/images/figma-export/hero-light-lg.png);
         height: 400px;
