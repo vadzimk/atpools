@@ -20,7 +20,7 @@ body {
 
 .input-container{
     background-color: #767E90;
-    border: solid;
+    border: 1px solid;
 }
 .input-container:hover {
     background-color: #A2968B;

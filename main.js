@@ -11,11 +11,13 @@ const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
 btn.addEventListener('click', function (e){
   e.stopPropagation()
   if(theme.getAttribute('href')==='light.css'){
-
     theme.href='dark.css'
-  } else {
+    btn.setAttribute('src', '/images/figma-export/mode-light.svg')
 
+  } else {
     theme.href='light.css'
+    btn.setAttribute('src', '/images/figma-export/mode-dark.svg')
+    
   }
 })
 
