@@ -3,12 +3,13 @@ h5 {
     font-family: 'Kannada MN', serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 20px;
+    line-height: 26px;
     letter-spacing: -0.04em;
+
 }
 
-p, li {
+p, li, label, input {
     font-family: 'Padauk', sans-serif;
     font-style: normal;
     font-weight: 400;

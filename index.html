@@ -15,13 +15,13 @@
     <section id="hero" class="cover overlay">
         <div id="description">
             <h5>Our friendly staff will make your pool look fabulous!</h5>
-            <a class="btn primary" href="#contact-section">Contact</a>
+            <a class="btn secondary" href="#contact">Request a quote</a>
         </div>
     </section>
 
     <section id="services">
         <div class="service" id="maintenance">
-            <div class="feature-img" ></div>
+            <div class="feature-img"></div>
             <article class="section-description">
                 <h5>Pool Maintenance</h5>
                 <ul>
@@ -30,7 +30,7 @@
                     <li>Vacuum the bottom of the pool</li>
                     <li>Brush walls</li>
                     <li>Clean filters</li>
-                    <li>Equipment check</li>
+                    <li>Monitor Equipment</li>
                 </ul>
             </article>
         </div>
@@ -51,87 +51,81 @@
             <article class="section-description">
                 <h5>Equipment Installation</h5>
                 <ul>
-                    <li>Plumbing</li>
+                    <li>Lightning</li>
                     <li>Filter</li>
                     <li>Pump and motor</li>
+                    <li>Plumbing</li>
+                    <li>Heater</li>
                     <li>Automation controls</li>
-                    <li>Lightning</li>
                 </ul>
             </article>
         </div>
     </section>
     <section id="service-areas">
-        <article class="section-description">
-            <h2>Our service areas</h2>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
-        </article>
-        <div id="map container">
-            <!--            <iframe-->
-            <!--                    width="600" height="450"-->
-            <!--                    style="border:0" loading="lazy"-->
-            <!--                    src="https://www.openstreetmap.org/export/embed.html?bbox=79.84933018684386%2C6.90329331805479%2C79.85746264457703%2C6.908917042549519&marker=6.906105188659279%2C79.85339641571045&layers=ND"-->
-            <!--                    allow="layout-animations 'none'; unoptimized-images 'none'; oversized-images 'none'; sync-script 'none'; sync-xhr 'none'; unsized-media 'none';"-->
-            <!--            ></iframe>-->
-        </div>
+        <h5>Our service areas</h5>
+        <img id="map" alt="map" src="images/figma-export/map2light.png">
     </section>
     <section id="contact">
 
-        <h3>Contact us and get a quote</h3>
+        <h5>Contact us and get a quote</h5>
         <div class="form-control">
             <form
                     name="contact-form"
                     method="POST"
                     action="https://atpools.com/api/contact"
             >
+                <div class="input-container">
+                    <input
+                            type="text"
+                            id="form-name"
+                            name="name"
+                            required
+                    />
+                    <label for="form-name">Name</label>
+                </div>
+                <div class="input-container">
+                    <input
+                            type="email"
+                            id="form-email"
+                            name="email"
+                            required
+                    />
+                    <label for="form-email">Email</label>
+                </div>
+                <div class="input-container">
+                    <input
+                            type="number"
+                            id="form-phone"
+                            name="phone"
+                    />
+                    <label for="form-phone">Phone</label>
+                </div>
+                <div class="input-container">
+                    <textarea
+                            id="form-message"
+                            name="message"
+                            required
+                            rows="5"
+                            cols="50"
+                    ></textarea>
+                    <label for="form-message">Message</label>
+                </div>
 
-                <label for="form-name">Name</label>
-                <input
-                        type="text"
-                        id="form-name"
-                        name="name"
-                        placeholder="Enter your name"
-                        required
-                />
-                <label for="form-email">Email</label>
-                <input
-                        type="email"
-                        id="form-email"
-                        name="email"
-                        placeholder="Enter your Email"
-                        required
-                />
-                <label for="form-phone">Phone</label>
-                <input
-                        type="number"
-                        id="form-phone"
-                        name="phone"
-                        placeholder="Enter your Phone Number"
-                />
-                <label for="form-message">Message</label>
-                <textarea
-                        id="form-message"
-                        name="message"
-                        required
-                        placeholder="Enter your message"
-                        rows="5"
-                        cols="50"
-                ></textarea>
 
-                <input type="submit" value="Send">
+                <input type="submit" value="Request a quote" class="secondary">
+                <p id="rates">*Rates vary depending on location and the scope of work</p>
             </form>
+            <div>
+
+            </div>
         </div>
     </section>
 </main>
 <footer>
-    <ul>
-        <li>Home</li>
-        <li>Services</li>
-        <li>Area</li>
-        <li>Contact</li>
-    </ul>
+        <a href="#"><h5>Home</h5></a>
+        <a href="#services"><h5>Services</h5></a>
+        <a href="#service-areas"><h5>Area</h5></a>
+        <a href="#contact"><h5>Contact</h5></a>
 </footer>
 </body>
 <script src="main.js"></script>
