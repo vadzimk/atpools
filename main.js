@@ -33,7 +33,7 @@ inputs.forEach((input) => {
   });
 });
 
-const images = document.querySelectorAll(".feature-img")
+const images = document.querySelectorAll(".feature-img, #map")
 
 images.forEach(image=>{
   image.addEventListener('click', (e)=>{

@@ -8,14 +8,18 @@
 </head>
 <body>
 <header>
-    <img id="logo" src="/images/figma-export/mdi_pool-thermometer.svg" alt="logo">
-    <img id="mode" src="/images/figma-export/mode-dark.svg" alt="mode">
+    <div class="header-container">
+        <img id="logo" src="/images/figma-export/mdi_pool-thermometer.svg" alt="logo">
+        <img id="mode" src="/images/figma-export/mode-dark.svg" alt="mode">
+    </div>
 </header>
 <main>
     <section id="hero" class="cover overlay">
-        <div id="description">
-            <h5>Our friendly staff will make your pool look fabulous!</h5>
-            <a class="btn secondary" href="#contact">Request a quote</a>
+        <div class="intro-container">
+            <div id="intro">
+                <h2>Our friendly staff will make your pool look fabulous!</h2>
+                <a class="btn secondary" href="#contact">Request a quote</a>
+            </div>
         </div>
     </section>
 
@@ -23,7 +27,7 @@
         <div class="service" id="maintenance">
             <div class="feature-img"></div>
             <article class="section-description">
-                <h5>Pool Maintenance</h5>
+                <h3>Pool Maintenance</h3>
                 <ul>
                     <li>Maintain water level</li>
                     <li>Test and adjust water chemistry</li>
@@ -36,7 +40,7 @@
         </div>
         <div class="service" id="remodelling">
             <article class="section-description">
-                <h5>Pool Remodelling</h5>
+                <h3>Pool Remodelling</h3>
                 <ul>
                     <li>Acid wash</li>
                     <li>Pool tile</li>
@@ -49,7 +53,7 @@
         <div class="service" id="equipment">
             <div class="feature-img"></div>
             <article class="section-description">
-                <h5>Equipment Installation</h5>
+                <h3>Equipment Installation</h3>
                 <ul>
                     <li>Lightning</li>
                     <li>Filter</li>
@@ -62,12 +66,11 @@
         </div>
     </section>
     <section id="service-areas">
-        <h5>Our service areas</h5>
+        <h3>Our service areas</h3>
         <img id="map" alt="map" src="images/figma-export/map2light.png">
     </section>
     <section id="contact">
-
-        <h5>Contact us and get a quote</h5>
+        <h3>Contact us and get a quote</h3>
         <div class="form-control">
             <form
                     name="contact-form"
@@ -111,8 +114,6 @@
                     ></textarea>
                     <label for="form-message">Message</label>
                 </div>
-
-
                 <input type="submit" value="Request a quote" class="secondary">
                 <p id="rates">*Rates vary depending on location and the scope of work</p>
             </form>
@@ -123,10 +124,13 @@
     </section>
 </main>
 <footer>
+    <div class="menu">
         <a href="#"><h5>Home</h5></a>
         <a href="#services"><h5>Services</h5></a>
         <a href="#service-areas"><h5>Area</h5></a>
         <a href="#contact"><h5>Contact</h5></a>
+    </div>
+
 </footer>
 </body>
 <script src="main.js"></script>

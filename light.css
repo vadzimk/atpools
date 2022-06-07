@@ -1,52 +1,73 @@
 @import "base.css";
-
+/*----------------------Tablet------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     #hero {
-        background-image: url(/images/figma-export/hero-light-sm.png);
-        height: 344px;
+        background-image: url(/images/figma-export/hero-light-md.png);
+        height: 400px;
     }
 
-    #description {
+    #intro {
         width: 324px;
         margin-left: 50px;
-        font-size: 24px;
     }
 
-    #description h5 {
-        font-size: 24px;
-        line-height: 29px;
-        letter-spacing: -0.04em;
-    }
 
-    header {
+    .header-container {
         padding: 0 50px;
     }
+
+    .service {
+        height: 500px;
+        padding-top: 66px;
+    }
+    .feature-img{
+        width: 272px;
+        height: 367px;
+    }
 }
+/*--------------------Desktop---------------------*/
 
 @media only screen and (min-width: 901px) {
     #hero {
         background-image: url(/images/figma-export/hero-light-lg.png);
-        height: 400px;
+        height: 500px;
     }
 
-    #description {
+    #intro {
         width: 448px;
         margin-left: 80px;
     }
 
-    #description h5 {
-        font-size: 32px;
-        line-height: 39px;
-        letter-spacing: -0.04em;
-    }
 
-    header {
+    .header-container {
         padding: 0 80px;
     }
+    .service {
+        height: 600px;
+        padding-top: 66px;
+    }
+    .feature-img{
+        width: 346px;
+        height: 468px;
+    }
 
-    .btn.primary {
-        width: 197px;
-        height: 46px;
-        font-size: 24px;
+    #map.enlarged {
+        transform: scale(1.3) translateX(30px);
+        z-index: 11;
+    }
+
+    .btn {
+        width: 180px;
+
+    }
+    /*input[type="submit"]{*/
+    /*    height: 42px;*/
+    /*}*/
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .service {
+        grid-gap: 100px;
     }
 }
