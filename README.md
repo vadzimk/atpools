@@ -10,6 +10,9 @@
 - geometry
 - contrast
 
+https://www.figma.com/file/DPXTuZIoryoZcszOXbssIi/pools?node-id=58%3A1871
+
+
 #### Implemented in vanilla css, html, js
 
 
