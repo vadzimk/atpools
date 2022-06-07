@@ -8,6 +8,20 @@ https://www.poolcalculator.com/pool-maintenance/
 
 @import "type.css";
 
+:root {
+    --accent-color: #295AAF;
+    --body-bg-color: #E8E9E6;
+    --text-color: #161D27;
+    --secondary2: #1CBA72;
+    --blue: #E2E9EB;
+    --green: #E8E9E6;
+    --form-bg-light: #f5f5f5;
+    --form-bg-hover-light: #EDDDCC;
+    --form-bg-focus-light: #D1DFEF;
+    --footer-bg-color-light: #767E90;
+    --footer-text-color: #D9D9D9;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -26,8 +40,8 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
-    background: #E8E9E6;
-    color: #161D27;
+    background: var(--body-bg-color);
+    color: var(--text-color);
 }
 
 header, .intro-container, #services, #service-areas, footer .menu {
@@ -129,7 +143,7 @@ header {
 }
 
 .secondary{
-    background: #1CBA72;
+    background: var(--secondary2);
     color: white;
 }
 
@@ -164,7 +178,7 @@ article li {
     justify-items: start;
 
     /* blue-gradient */
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 100%), #E2E9EB;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.1) 100%), var(--blue);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
 }
@@ -177,7 +191,7 @@ section > h3 {
 }
 
 .service:nth-of-type(2n){
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.4%, rgba(0, 0, 0, 0.1) 100%), #E8E9E6;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.4%, rgba(0, 0, 0, 0.1) 100%), var(--green);
 }
 
 .feature-img {
@@ -267,7 +281,7 @@ label, input, textarea {
 
 /* A container to position LABELS */
 .input-container {
-    background-color: #f5f5f5;
+    background-color: var(--form-bg-light);
     position: relative;
     border-radius: 4px;
    min-height: 56px;
@@ -275,11 +289,11 @@ label, input, textarea {
     margin-bottom: 16px;
 }
 .input-container:hover {
-    background-color: #EDDDCC;
+    background-color: var(--form-bg-hover-light);
 }
 
 .input-container:focus-within {
-    background-color: #D1DFEF;
+    background-color: var(--form-bg-focus-light);
 }
 
 /* we put label on top of the input*/
@@ -297,9 +311,6 @@ label {
 
 }
 
-:root {
-    --accent-color: #295AAF;
-}
 input, textarea {
     width: 100%;
     height: 100%;
@@ -307,16 +318,16 @@ input, textarea {
     background: transparent;
     caret-color: var(--accent-color);
     border: transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.42);
-    color: rgba(0, 0, 0, 0.87);
+    /*border-bottom-color: rgba(0, 0, 0, 0.42);*/
+    /*color: rgba(0, 0, 0, 0.87);*/
     transition: border 500ms;
     padding: 20px 16px 6px;
     font-size: 1rem;
 }
 input:focus, textarea:focus {
     outline: none;
-    border-bottom-width: 2px;
-    border-bottom-color: var(--accent-color);
+    /*border-bottom-width: 2px;*/
+    /*border-bottom-color: var(--accent-color);*/
 }
 
 input:focus + label, textarea:focus + label {
@@ -346,9 +357,9 @@ input[type="submit"] {
     text-align: end;
 }
 footer{
-    background-color: #767E90;
+    background-color: var(--footer-bg-color-light);
     height: 100px;
-    color: #D9D9D9;
+    color: var(--footer-text-color);
 }
 footer .menu{
     display: flex;
@@ -360,5 +371,5 @@ footer .menu{
 
 footer a {
     text-decoration: none;
-    color: #D9D9D9;
+    color: var(--footer-text-color);
 }
