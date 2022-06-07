@@ -2,21 +2,23 @@ const btn = document.querySelector('#mode')
 
 const theme = document.querySelector('#theme-link')
 const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
+const mapImg = document.querySelector('#map')
 
 // todo uncomment this
-// if (preferDark.matches){
-//   theme.href = 'dark.css'
-// }
+if (preferDark.matches){
+  theme.href = 'dark.css'
+}
 
 btn.addEventListener('click', function (e){
   e.stopPropagation()
   if(theme.getAttribute('href')==='light.css'){
     theme.href='dark.css'
     btn.setAttribute('src', '/images/figma-export/mode-light.svg')
-
+    mapImg.setAttribute('src','images/figma-export/map2dark.png')
   } else {
     theme.href='light.css'
     btn.setAttribute('src', '/images/figma-export/mode-dark.svg')
+    mapImg.setAttribute('src','images/figma-export/map2light.png')
     
   }
 })

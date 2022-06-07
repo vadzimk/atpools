@@ -76,7 +76,7 @@ header, .intro-container, #services, #service-areas, footer .menu {
     align-items: flex-start;
     margin-left: 16px;
     width: 250px;
-    gap: 16px;
+    /*gap: 16px;*/
 }
 .intro-container{
     width: 100%;
@@ -90,7 +90,7 @@ header {
     width: 100%;
     z-index: 10;
     position: relative;
-    top: 30px;
+    top: 16px;
 
 }
 .header-container {
@@ -336,10 +336,10 @@ input[type="submit"] {
 }
 footer{
     background-color: #767E90;
+    height: 100px;
+    color: #D9D9D9;
 }
 footer .menu{
-    height: 80px;
-    color: #D9D9D9;
     display: flex;
     flex-direction: row;
     list-style: none;
