@@ -3,12 +3,15 @@ import mailChannelsPlugin from "@cloudflare/pages-plugin-mailchannels";
 export const onRequest = mailChannelsPlugin({
     personalizations: [
         {
-            to: [{ name: "ACME Support", email: "atpoolsla@gmail.com" }],
+            to: [{name: "ACME Support", email: "atpoolsla@gmail.com"}],
         },
     ],
-    from: {
-        name: "ACME Support",
-        email: "support@example.com",
+    from: ({formData}) => {
+        const sender = formData.get('email')
+        return {
+            name: "Form submit",
+            email: `${sender}`,
+        }
     },
     respondWith: () => {
         return new Response(
