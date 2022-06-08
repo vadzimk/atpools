@@ -8,6 +8,8 @@
     <script src="main.js" defer></script>
 </head>
 <body>
+<!--Force browsers to load CSS before showing the page-->
+<div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
 <header>
     <div class="header-container">
         <img id="logo" src="/images/figma-export/mdi_pool-thermometer.svg" alt="logo">
@@ -79,7 +81,7 @@
             <form
                     name="contact-form"
                     method="POST"
-                    action="https://atpools.com/api/contact"
+                    data-static-form-name="contact"
             >
                 <div class="input-container">
                     <input

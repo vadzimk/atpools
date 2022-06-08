@@ -71,3 +71,7 @@
         grid-gap: 100px;
     }
 }
+
+/* Force browsers to load CSS before showing the page
+must be the last line:*/
+#loadOverlay{display: none;}

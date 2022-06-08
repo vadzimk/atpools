@@ -15,8 +15,4 @@ https://www.figma.com/file/DPXTuZIoryoZcszOXbssIi/pools?node-id=58%3A1871
 
 #### Implemented in vanilla css, html, js
 
-
-Static site hosted on Cloudfare (free unlimited bandwidth)
-
-
-Backend lambda function to send emails using nodemailer hosted on Netlify
+Static page with email form using a backend worker script.

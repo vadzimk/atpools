@@ -51,3 +51,8 @@ label {
 footer{
     background-color: var(--gray2);
 }
+
+
+/* Force browsers to load CSS before showing the page
+must be the last line:*/
+#loadOverlay{display: none;}
