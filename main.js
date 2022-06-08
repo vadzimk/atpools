@@ -35,6 +35,15 @@ inputs.forEach((input) => {
   });
 });
 
+inputs.forEach((input) => {
+  console.log(input.nodeValue)
+    if (input.innerHTML) {
+      input.classList.add("is-valid");
+    } else {
+      input.classList.remove("is-valid");
+    }
+});
+
 const images = document.querySelectorAll(".feature-img, #map")
 
 images.forEach(image=>{
