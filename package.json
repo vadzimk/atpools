@@ -1,0 +1,25 @@
+{
+  "name": "atpools-netlify",
+  "version": "1.0.0",
+  "description": "## landing page #### Designed in Figma using graphic design principles: - typography - alignment - grid - color theory - composition - geometry - contrast",
+  "main": "functions/contact-form/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadzimk/atpools.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vadzimk/atpools/issues"
+  },
+  "homepage": "https://github.com/vadzimk/atpools#readme",
+  "dependencies": {
+    "nodemailer": "^6.7.5"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
