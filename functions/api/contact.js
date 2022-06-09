@@ -1,5 +1,6 @@
-import 'dotenv/config'
+import dotenv from 'dotenv'
 import nodemailer from 'nodemailer';
+dotenv.config()
 
 
 let transporter = nodemailer.createTransport({
