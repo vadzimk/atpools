@@ -30,7 +30,7 @@ const handler = async (event) => {
     const subject = event.queryStringParameters.name || 'World'
     let success = false
     // send mail with defined transport object
-    await transporter.sendMail(mailOptions,(err, data)=>{
+    const info = await transporter.sendMail(mailOptions,(err, data)=>{
       if (err){
         console.log("Error from transporter: " + err)
         success = `Error ${err}`
@@ -42,7 +42,7 @@ const handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: success }),
+      body: JSON.stringify({ message: info.messageId }),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
