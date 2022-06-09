@@ -5,7 +5,8 @@
   "description": "## landing page #### Designed in Figma using graphic design principles: - typography - alignment - grid - color theory - composition - geometry - contrast",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install"
   },
   "repository": {
     "type": "git",
