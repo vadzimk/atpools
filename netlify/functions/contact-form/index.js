@@ -1,7 +1,7 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 
-import dotenv from 'dotenv'
-import nodemailer from 'nodemailer';
+const dotenv = require('dotenv')
+const nodemailer = require('nodemailer')
 dotenv.config()
 
 let transporter = nodemailer.createTransport({
@@ -16,8 +16,6 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-
-
 const handler = async (event) => {
   // where to send the email and with what data:
   let mailOptions = {
@@ -30,19 +28,21 @@ const handler = async (event) => {
 
   try {
     const subject = event.queryStringParameters.name || 'World'
-
+    let success = false
     // send mail with defined transport object
     await transporter.sendMail(mailOptions,(err, data)=>{
       if (err){
-        console.log("Error " + err)
+        console.log("Error from transporter: " + err)
+        success = `Error ${err}`
       } else {
         console.log("Email sent successfully")
+        success = "Success"
       }
     });
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: `Sent` }),
+      body: JSON.stringify({ message: success }),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
@@ -51,5 +51,6 @@ const handler = async (event) => {
     return { statusCode: 500, body: error.toString() }
   }
 }
+
 
 module.exports = { handler }
