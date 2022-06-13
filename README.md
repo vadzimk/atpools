@@ -1,7 +1,7 @@
 # pools-landing
 
 ## landing page
-#### Designed in Figma using graphic design principles:
+#### Designed using Figma and applied on practice graphic design principles:
 - typography
 - alignment
 - grid
