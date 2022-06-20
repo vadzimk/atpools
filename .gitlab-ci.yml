@@ -20,7 +20,7 @@ stages:
 deploy_frontend:
   stage: deploy
   script:
-    - scp -o StrictHostKeyChecking=no -i WS_KEY -r frontend/* ubuntu@WS_HOST:/home/ubuntu/applications/share/nginx/html/atpools
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:/home/ubuntu/applications/share/nginx/html/atpools
   environment:
     name: development
     url: https://$WS_HOST:443
