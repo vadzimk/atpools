@@ -33,11 +33,13 @@ build_backend:
 
 deploy_frontend:
   stage: deploy
+  variables:
+    PATH_STATIC: "/home/ubuntu/applications/share/nginx/html/atpools"
   before_script:
     - chmod 400 $WS_KEY
   script:
-    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "rm -rf /home/ubuntu/applications/share/nginx/html/atpools/*"
-    - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:/home/ubuntu/applications/share/nginx/html/atpools
+    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "if [ ! -d ${PATH_STATIC} ]; then mkdir -p ${PATH_STATIC}; fi; rm -rf ${PATH_STATIC}/*"
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:${PATH_STATIC}
   environment:
     name: development
     url: https://atpools.${WS_HOST}
@@ -46,6 +48,7 @@ deploy_backend:
   stage: deploy
   variables:
     SERVICE_NAME: "backend"
+    PATH_BCK: "/home/ubuntu/applications/atpools"
     APP_PORT: ""
   before_script:
     - chmod 400 $WS_KEY # private key
@@ -55,14 +58,15 @@ deploy_backend:
     - echo "$SERVICE_NAME"_IMAGE_TAG
     - echo $IMAGE_TAG
   script:
-    - scp -o StrictHostKeyChecking=no -i $WS_KEY backend/docker-compose.yml ubuntu@$WS_HOST:/home/ubuntu/applications/atpools
+    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "if [ ! -d ${PATH_BCK} ]; then mkdir -p ${PATH_BCK}; fi;"
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY backend/docker-compose.yml ubuntu@$WS_HOST:${PATH_BCK}
     - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "
       docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY &&
       export DC_IMAGE_NAME=$IMAGE_NAME &&
       export DC_IMAGE_TAG=$IMAGE_TAG &&
       export DC_APP_PORT=$APP_PORT &&
       export COMPOSE_PROJECT_NAME=$SERVICE_NAME &&
-      cd /home/ubuntu/applications/atpools &&
+      cd ${PATH_BCK} &&
       docker-compose down &&
       docker-compose up -d"
   environment:
