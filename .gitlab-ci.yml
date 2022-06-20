@@ -49,7 +49,6 @@ deploy_backend:
   variables:
     SERVICE_NAME: "backend"
     PATH_BCK: "/home/ubuntu/applications/atpools"
-    APP_PORT: ""
   before_script:
     - chmod 400 $WS_KEY # private key
     - export IMAGE_NAME=$CI_REGISTRY_IMAGE/$SERVICE_NAME
@@ -59,7 +58,7 @@ deploy_backend:
     - echo $IMAGE_TAG
   script:
     - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "if [ ! -d ${PATH_BCK} ]; then mkdir -p ${PATH_BCK}; fi;"
-    - scp -o StrictHostKeyChecking=no -i $WS_KEY backend/docker-compose.yml ubuntu@$WS_HOST:${PATH_BCK}
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY backend/docker-compose.yml ubuntu@$WS_HOST:${PATH_BCK}/
     - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "
       docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY &&
       export DC_IMAGE_NAME=$IMAGE_NAME &&
