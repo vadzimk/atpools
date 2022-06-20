@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+
+  backend:
+    container_name: atpools_backend
+    restart: always
+    image: ${DC_IMAGE_NAME}:${DC_IMAGE_TAG}
+    ports:
+      - 3001:3001
+    networks:
+      - common-network
+
+networks:
+  common-network:
+    external:
+      name: common-network  # must match the actual name of the network created in the external file

@@ -5,17 +5,31 @@ workflow:
     - when: always
 
 stages:
-#  - test # TODO
-#  - build # TODO
+  - build
   - deploy
 
-# TODO
-#test:
-#  stage: test
-#  image: node:16.13-alpine
-
-#build_atpools_contact:
-#  stage: build
+build_backend:
+  stage: build
+  image: docker
+  services:
+    - docker:dind
+  variables:
+    SERVICE_NAME: "backend"
+  before_script:
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE/$SERVICE_NAME
+    - apk add jq # install app to parse package.json
+    - export PACKAGE_VERSION=$(cat $SERVICE_NAME/package.json | jq -r .version)
+    - export IMAGE_TAG=$PACKAGE_VERSION.$CI_PIPELINE_IID
+    - echo "IMAGE_TAG=$IMAGE_TAG"
+    - echo "${SERVICE_NAME}_IMAGE_TAG"=$IMAGE_TAG
+    - echo "${SERVICE_NAME}_IMAGE_TAG=${IMAGE_TAG}" >> build.env
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $IMAGE_NAME:$IMAGE_TAG ./${SERVICE_NAME}
+    - docker push $IMAGE_NAME:$IMAGE_TAG
+  artifacts: # by default uploaded to all following stages if not specified in dependencies
+    reports:
+      dotenv: build.env # loaded in all subsequent jobs (must be relative to working directory of .gitlab-ci.yml)
 
 deploy_frontend:
   stage: deploy
@@ -26,4 +40,31 @@ deploy_frontend:
     - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:/home/ubuntu/applications/share/nginx/html/atpools
   environment:
     name: development
-    url: https://$WS_HOST:443
+    url: https://atpools.${WS_HOST}
+
+deploy_backend:
+  stage: deploy
+  variables:
+    SERVICE_NAME: "backend"
+    APP_PORT: ""
+  before_script:
+    - chmod 400 $WS_KEY # private key
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE/$SERVICE_NAME
+    - export IMAGE_TAG=$(eval "echo \${${SERVICE_NAME}_IMAGE_TAG}") # use nested substitution for sh
+    - echo $IMAGE_NAME
+    - echo "$SERVICE_NAME"_IMAGE_TAG
+    - echo $IMAGE_TAG
+  script:
+    - scp -o StrictHostKeyChecking=no -i $WS_KEY docker-compose.yaml ubuntu@$WS_HOST:/home/ubuntu/applications/atpools
+    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "
+      docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY &&
+      export DC_IMAGE_NAME=$IMAGE_NAME &&
+      export DC_IMAGE_TAG=$IMAGE_TAG &&
+      export DC_APP_PORT=$APP_PORT &&
+      export COMPOSE_PROJECT_NAME=$SERVICE_NAME &&
+      docker-compose down &&
+      docker-compose up -d"
+  environment:
+    name: development
+    url: https://atpools.${WS_HOST}
+  resource_group: dev # fix The deployment job is older than the previously succeeded deployment job, and therefore cannot be run
