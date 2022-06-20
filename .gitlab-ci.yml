@@ -62,6 +62,7 @@ deploy_backend:
       export DC_IMAGE_TAG=$IMAGE_TAG &&
       export DC_APP_PORT=$APP_PORT &&
       export COMPOSE_PROJECT_NAME=$SERVICE_NAME &&
+      cd /home/ubuntu/applications/atpools &&
       docker-compose down &&
       docker-compose up -d"
   environment:
