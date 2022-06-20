@@ -1,34 +1,38 @@
 import nodemailer from 'nodemailer';
+import {google} from 'googleapis'
+import {auth, REDIRECT_URI} from './config.js';
 
-let transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 465,
-  secure: true,
-  auth: {
-    type: 'OAuth2',
-    user: process.env.MAIL_USERNAME,
-    pass: process.env.MAIL_PASSWORD,
-    clientId: process.env.OAUTH_CLIENTID,
-    clientSecret: process.env.OAUTH_CLIENT_SECRET,
-    refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-    accessToken: process.env.ACCESS_TOKEN,
-    expires: 1484314697598,
-  }
-});
-// where to send the email and with what data:
-let mailOptions = {
-  from: "'Site contact form' <atpoolsla@gmail.com>",
-  to: "vadzimkk@gmail.com, vadzimkk@gmail.com",
-  subject: 'Nodemailer Project',
-  text: 'Hi from your nodemailer project',
-  html: "<b>Hi from your nodemailer project</b>", // html body
-};
+const oauth2Client = new google.auth.OAuth2(auth.clientId, auth.clientSecret, REDIRECT_URI);
+oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 
 
-async function handler (event) {
+async function send_mail(body) {
+  let mailOptions = {
+    from: `${body.name} <${body.email}>`,
+    to: "vadzimkk@gmail.com, vadzimkk@gmail.com",
+    subject: 'New quote request in ATpools',
+    text: `${body.message} 
+${body.name} 
+${body.phone}`,
+    html: `<p>${body.message}</p>
+        <h4>${body.name}</h4>
+        <h4>${body.phone}</h4>`,
+  };
+
 
   try {
-    const subject = event.queryStringParameters.name || 'World'
+  const accessToken = oauth2Client.getAccessToken();
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      ...auth,
+      accessToken: accessToken
+    }
+  });
+
+
     let success = false
     // send mail with defined transport object
     const info = await transporter.sendMail(mailOptions, (err, data) => {
@@ -53,4 +57,4 @@ async function handler (event) {
   }
 }
 
-export default handler;
+export default send_mail;
