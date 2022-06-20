@@ -53,7 +53,7 @@ header, .intro-container, #services, #service-areas, footer .menu {
 #hero {
     width: 100%;
     height: 300px;
-    background-image: url(/images/figma-export/hero-light-sm.png);
+    background-image: url(images/figma-export/hero-light-sm.png);
 }
 
 .cover {

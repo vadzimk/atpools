@@ -2,7 +2,7 @@
 /*----------------------Tablet------------------------*/
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     #hero {
-        background-image: url(/images/figma-export/hero-light-md.png);
+        background-image: url(images/figma-export/hero-light-md.png);
         height: 400px;
     }
 
@@ -29,7 +29,7 @@
 
 @media only screen and (min-width: 901px) {
     #hero {
-        background-image: url(/images/figma-export/hero-light-lg.png);
+        background-image: url(images/figma-export/hero-light-lg.png);
         height: 500px;
     }
 
