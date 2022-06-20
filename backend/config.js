@@ -14,5 +14,5 @@ const auth = {
 const REDIRECT_URI='https://developers.google.com/oauthplayground'
 
 const BASE_URL = process.env.NODE_ENV==='development' ? '/api' : ''
-
-export {auth, REDIRECT_URI, BASE_URL}
+const RECEIVING_EMAILS = process.env.RECEIVING_EMAILS
+export {auth, REDIRECT_URI, BASE_URL, RECEIVING_EMAILS}

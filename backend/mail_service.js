@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import {google} from 'googleapis'
-import {auth, REDIRECT_URI} from './config.js';
+import {auth, REDIRECT_URI, RECEIVING_EMAILS} from './config.js';
 
 const oauth2Client = new google.auth.OAuth2(auth.clientId, auth.clientSecret, REDIRECT_URI);
 oauth2Client.setCredentials({refresh_token: auth.refreshToken})
@@ -9,7 +9,7 @@ oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 async function send_mail(body) {
   let mailOptions = {
     from: `${body.name} <${body.email}>`,
-    to: "vadzimkk@gmail.com, vadzimkk@gmail.com",
+    to: RECEIVING_EMAILS,
     subject: 'New quote request in ATpools',
     text: `${body.message} 
 ${body.name} 
