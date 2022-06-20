@@ -1,8 +1,4 @@
-// Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
-
-const dotenv = require('dotenv')
-const nodemailer = require('nodemailer')
-dotenv.config()
+import nodemailer from 'nodemailer';
 
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -19,23 +15,24 @@ let transporter = nodemailer.createTransport({
     expires: 1484314697598,
   }
 });
+// where to send the email and with what data:
+let mailOptions = {
+  from: "'Site contact form' <atpoolsla@gmail.com>",
+  to: "vadzimkk@gmail.com, vadzimkk@gmail.com",
+  subject: 'Nodemailer Project',
+  text: 'Hi from your nodemailer project',
+  html: "<b>Hi from your nodemailer project</b>", // html body
+};
 
-const handler = async (event) => {
-  // where to send the email and with what data:
-  let mailOptions = {
-    from: "'Site contact form' <atpoolsla@gmail.com>",
-    to: "vadzimkk@gmail.com, vadzimkk@gmail.com",
-    subject: 'Nodemailer Project',
-    text: 'Hi from your nodemailer project',
-    html: "<b>Hi from your nodemailer project</b>", // html body
-  };
+
+async function handler (event) {
 
   try {
     const subject = event.queryStringParameters.name || 'World'
     let success = false
     // send mail with defined transport object
-    const info = await transporter.sendMail(mailOptions,(err, data)=>{
-      if (err){
+    const info = await transporter.sendMail(mailOptions, (err, data) => {
+      if (err) {
         console.log("Error from transporter: " + err)
         success = `Error ${err}`
       } else {
@@ -46,15 +43,14 @@ const handler = async (event) => {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: info.messageId }),
+      body: JSON.stringify({message: info.messageId}),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
     }
   } catch (error) {
-    return { statusCode: 500, body: error.toString() }
+    return {statusCode: 500, body: error.toString()}
   }
 }
 
-
-module.exports = { handler }
+export default handler;
