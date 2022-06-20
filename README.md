@@ -1,6 +1,6 @@
-# pools-landing
+# Corporate landing page
 
-## landing page
+## ATpools
 #### Designed using Figma and applied on practice graphic design principles:
 - typography
 - alignment
