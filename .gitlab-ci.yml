@@ -22,6 +22,7 @@ deploy_frontend:
   before_script:
     - chmod 400 $WS_KEY
   script:
+    - ssh -o StrictHostKeyChecking=no -i $WS_KEY ubuntu@$WS_HOST "rm -rf /home/ubuntu/applications/share/nginx/html/atpools/*"
     - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:/home/ubuntu/applications/share/nginx/html/atpools
   environment:
     name: development
