@@ -69,5 +69,12 @@ deploy_backend:
       cd ${PATH_BCK} &&
       docker network create common_network || true &&
       docker-compose down &&
+      export MAIL_USERNAME=$MAIL_USERNAME &&
+      export MAIL_PASSWORD=$MAIL_PASSWORD &&
+      export OAUTH_CLIENTID=$OAUTH_CLIENTID &&
+      export OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET &&
+      export OAUTH_REFRESH_TOKEN=$OAUTH_REFRESH_TOKEN &&
+      export ACCESS_TOKEN=$ACCESS_TOKEN &&
+      export RECEIVING_EMAILS=$RECEIVING_EMAILS &&
       docker-compose up -d"
   resource_group: dev # fix The deployment job is older than the previously succeeded deployment job, and therefore cannot be run

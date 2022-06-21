@@ -10,6 +10,14 @@ services:
       - 3001:3001
     networks:
       - common_network
+    environment:
+      - MAIL_USERNAME=$MAIL_USERNAME
+      - MAIL_PASSWORD=$MAIL_PASSWORD
+      - OAUTH_CLIENTID=$OAUTH_CLIENTID
+      - OAUTH_CLIENT_SECRET=$OAUTH_CLIENT_SECRET
+      - OAUTH_REFRESH_TOKEN=$OAUTH_REFRESH_TOKEN
+      - ACCESS_TOKEN=$ACCESS_TOKEN
+      - RECEIVING_EMAILS=$RECEIVING_EMAILS
 
 networks:
   common_network:
