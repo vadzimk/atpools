@@ -324,6 +324,11 @@ input, textarea {
     padding: 20px 16px 6px;
     font-size: 1rem;
 }
+
+textarea{
+    padding-top: 24px;
+}
+
 input:focus, textarea:focus {
     outline: none;
     /*border-bottom-width: 2px;*/

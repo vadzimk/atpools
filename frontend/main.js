@@ -1,10 +1,11 @@
+/*------------------- Theme change --------------------------*/
 const btnMode = document.querySelector('#mode')
-
 const theme = document.querySelector('#theme-link')
 const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
 const mapImg = document.querySelector('#map')
 
 // NOTE uncomment this for production
+// synchronizes theme with user OS preferences
 if (preferDark.matches) {
   theme.href = 'dark.css'
 }
@@ -23,6 +24,8 @@ btnMode.addEventListener('click', function (e) {
   }
 })
 
+/*------------------- Form inputs animation -----------------------*/
+
 const inputs = document.querySelectorAll("input, textarea")
 
 inputs.forEach((input) => {
@@ -36,12 +39,14 @@ inputs.forEach((input) => {
 });
 
 inputs.forEach((input) => {
-  if (input.innerHTML) {
+  if (input.value) {
     input.classList.add("is-valid");
   } else {
     input.classList.remove("is-valid");
   }
 });
+
+/*------------------- Feature image animation --------------------------*/
 
 const images = document.querySelectorAll(".feature-img, #map")
 
@@ -61,6 +66,7 @@ document.addEventListener('click', () => {
   })
 })
 
+/*------------------- Form submission --------------------------*/
 
 const form = document.querySelector('form');
 const thank = document.querySelector('#thank-you')
