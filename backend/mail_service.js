@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import {google} from 'googleapis'
 import {auth, REDIRECT_URI, RECEIVING_EMAILS} from './config.js';
-
+console.log("auth.user", auth.user)
 const oauth2Client = new google.auth.OAuth2(auth.clientId, auth.clientSecret, REDIRECT_URI);
 oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 

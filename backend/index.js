@@ -3,10 +3,10 @@ import express from 'express';
 import send_mail from './mail_service.js';
 import bodyParser from 'body-parser';
 import {BASE_URL} from './config.js';
-
+console.log("BASE_URL=", BASE_URL)
 const app = express();
 const port = 3001;
-console.log("auth.user", process.env.MAIL_USERNAME)
+
 
 app.use(express.static('../frontend')); // for local development
 app.use(bodyParser.json())
