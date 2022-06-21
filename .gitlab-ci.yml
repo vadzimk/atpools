@@ -42,7 +42,7 @@ deploy_frontend:
     - scp -o StrictHostKeyChecking=no -i $WS_KEY -r frontend/* ubuntu@$WS_HOST:${PATH_STATIC}
   environment:
     name: development
-    url: https://atpools.${WS_HOST}
+    url: https://atpools.vadzimk.link
   resource_group: dev # fix The deployment job is older than the previously succeeded deployment job, and therefore cannot be run
 
 deploy_backend:
@@ -70,7 +70,4 @@ deploy_backend:
       docker network create common_network || true &&
       docker-compose down &&
       docker-compose up -d"
-  environment:
-    name: development
-    url: https://atpools.vadzimk.link
   resource_group: dev # fix The deployment job is older than the previously succeeded deployment job, and therefore cannot be run
