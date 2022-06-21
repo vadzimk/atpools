@@ -9,7 +9,8 @@
 </head>
 <body>
 <!--Force browsers to load CSS before showing the page-->
-<div id="loadOverlay" style="background-color:#333; position:absolute; top:0px; left:0px; width:100%; height:100%; z-index:2000;"></div>
+<div id="loadOverlay"
+     style="background-color:#333; position:absolute; top:0; left:0; width:100%; height:100%; z-index:2000;"></div>
 <header>
     <div class="header-container">
         <img id="logo" src="images/figma-export/mdi_pool-thermometer.svg" alt="logo">
@@ -21,8 +22,8 @@
         <div class="intro-container">
             <div id="intro">
                 <h1>Our friendly staff will make your pool look fabulous!</h1>
-                <div class="btn secondary" >
-                    <a href="#contact" >Request a quote</a>
+                <div class="btn secondary">
+                    <a href="#contact">Request a quote</a>
                 </div>
 
             </div>
@@ -76,12 +77,12 @@
         <img id="map" alt="map" src="images/figma-export/map2light.png">
     </section>
     <section id="contact">
-        <h3>Contact us and get a quote</h3>
+        <h3>Contact to get a quote</h3>
+
         <div class="form-control">
             <form
                     name="contact-form"
                     method="POST"
-                    action="/api/contact"
             >
                 <div class="input-container">
                     <input
@@ -123,6 +124,13 @@
                 <input type="submit" value="Request a quote" class="secondary">
                 <p id="rates">*Rates vary depending on location and the scope of work</p>
             </form>
+            <div id="thank-you" style="display: none">
+                <div id="envelope"></div>
+                <div>
+                    <h4><strong>Thank you</strong></h4>
+                    <p>We shall get back to you shortly</p>
+                </div>
+            </div>
             <div>
 
             </div>

@@ -11,19 +11,29 @@
         margin-left: 50px;
     }
 
-
     .header-container {
         padding: 0 50px;
     }
 
-    .service {
+    .service, #thank-you {
         height: 500px;
         padding-top: 66px;
     }
+
+    #envelope{
+        width: 100px;
+        height: 100px;
+    }
+
+    #thank-you{
+        font-size: 1.266rem;
+    }
+
     .feature-img{
         width: 272px;
         height: 367px;
     }
+
 }
 /*--------------------Desktop---------------------*/
 
@@ -38,13 +48,19 @@
         margin-left: 80px;
     }
 
-
     .header-container {
         padding: 0 80px;
     }
-    .service {
+    .service, #thank-you {
         height: 600px;
         padding-top: 66px;
+    }
+    #thank-you{
+        font-size: 1.424rem;
+    }
+    #envelope{
+        width: 120px;
+        height: 120px;
     }
     .feature-img{
         width: 346px;

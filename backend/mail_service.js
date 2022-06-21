@@ -1,13 +1,12 @@
 import nodemailer from 'nodemailer';
 import {google} from 'googleapis'
 import {auth, REDIRECT_URI, RECEIVING_EMAILS} from './config.js';
+
 console.log("auth.user", auth.user)
 const oauth2Client = new google.auth.OAuth2(auth.clientId, auth.clientSecret, REDIRECT_URI);
 oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 
-
 async function send_mail(body) {
-
   let mailOptions = {
     from: `ATpools <${auth.user}>`,
     to: RECEIVING_EMAILS,
@@ -33,42 +32,33 @@ ${body.phone}`,
         </div>
        `,
   };
-
-
+  let success = true;
   try {
-  const accessToken = oauth2Client.getAccessToken();
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      ...auth,
-      accessToken: accessToken
-    }
-  });
-
-
-    let success = false
-    // send mail with defined transport object
-    const info = await transporter.sendMail(mailOptions, (err, data) => {
-      if (err) {
-        console.log("Error from transporter: " + err)
-        success = `Error ${err}`
-      } else {
-        console.log("Email sent successfully")
-        success = "Success"
+    const accessToken = oauth2Client.getAccessToken();
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        ...auth,
+        accessToken: accessToken
       }
     });
-
-    return {
-      statusCode: 200,
-      body: JSON.stringify({message: info.messageId}),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
-    }
+    await transporter.sendMail(mailOptions, (err, _) => {
+      if (err) {
+        console.log("Error from transporter: " + err)
+        success = false;
+      } else {
+        console.log("Email sent successfully")
+      }
+    });
   } catch (error) {
+    console.log("error:", error.toString());
     return {statusCode: 500, body: error.toString()}
+  }
+  return {
+    statusCode: success ? 200 : 500,
+    body: "ok"
   }
 }
 

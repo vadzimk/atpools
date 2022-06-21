@@ -48,6 +48,10 @@ label {
     font-weight: bold;
 }
 
+#envelope{
+    background-image: url(images/figma-export/envelope-dark.svg);
+}
+
 footer{
     background-color: var(--gray2);
 }

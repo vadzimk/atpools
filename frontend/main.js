@@ -1,25 +1,25 @@
-const btn = document.querySelector('#mode')
+const btnMode = document.querySelector('#mode')
 
 const theme = document.querySelector('#theme-link')
 const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
 const mapImg = document.querySelector('#map')
 
-// todo uncomment this
-if (preferDark.matches){
+// NOTE uncomment this for production
+if (preferDark.matches) {
   theme.href = 'dark.css'
 }
 
-btn.addEventListener('click', function (e){
+btnMode.addEventListener('click', function (e) {
   e.stopPropagation()
-  if(theme.getAttribute('href')==='light.css'){
-    theme.href='dark.css'
-    btn.setAttribute('src', 'images/figma-export/mode-light.svg')
-    mapImg.setAttribute('src','images/figma-export/map2dark.png')
+  if (theme.getAttribute('href') === 'light.css') {
+    theme.href = 'dark.css'
+    btnMode.setAttribute('src', 'images/figma-export/mode-light.svg')
+    mapImg.setAttribute('src', 'images/figma-export/map2dark.png')
   } else {
-    theme.href='light.css'
-    btn.setAttribute('src', 'images/figma-export/mode-dark.svg')
-    mapImg.setAttribute('src','images/figma-export/map2light.png')
-    
+    theme.href = 'light.css'
+    btnMode.setAttribute('src', 'images/figma-export/mode-dark.svg')
+    mapImg.setAttribute('src', 'images/figma-export/map2light.png')
+
   }
 })
 
@@ -36,28 +36,56 @@ inputs.forEach((input) => {
 });
 
 inputs.forEach((input) => {
-  console.log(input.nodeValue)
-    if (input.innerHTML) {
-      input.classList.add("is-valid");
-    } else {
-      input.classList.remove("is-valid");
-    }
+  if (input.innerHTML) {
+    input.classList.add("is-valid");
+  } else {
+    input.classList.remove("is-valid");
+  }
 });
 
 const images = document.querySelectorAll(".feature-img, #map")
 
-images.forEach(image=>{
-  image.addEventListener('click', (e)=>{
+images.forEach(image => {
+  image.addEventListener('click', (e) => {
     e.stopPropagation()
     image.classList.toggle("enlarged")
   })
 })
 
-document.addEventListener('click', ()=>{
+document.addEventListener('click', () => {
 
-  images.forEach(image=>{
-    if(image.classList.contains('enlarged')){
+  images.forEach(image => {
+    if (image.classList.contains('enlarged')) {
       image.classList.remove('enlarged')
     }
   })
 })
+
+
+const form = document.querySelector('form');
+const thank = document.querySelector('#thank-you')
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+  console.log("form data", data)
+  const res = await postMessage(data);
+  if (res.status === 200) {
+    form.style.display = 'none';
+    thank.style.display = 'flex';
+  } else {
+    console.log('error: status', res.status)
+  }
+});
+
+async function postMessage(data = {}) {
+  return await fetch('/api/contact', {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data)
+  });
+}

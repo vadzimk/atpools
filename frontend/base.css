@@ -356,6 +356,35 @@ input[type="submit"] {
     margin: 32px 0 32px auto;
     text-align: end;
 }
+
+/*---------------------- Thank you block ---------------------*/
+
+#thank-you{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.125rem;
+    align-items: center;
+    text-align: center;
+    min-height: 312px;
+    padding: 45px 16px 16px;
+}
+
+#thank-you h4 {
+    letter-spacing: 1px;
+}
+
+#envelope{
+    background-image: url(images/figma-export/envelope-light.svg);
+    width: 80px;
+    height: 80px;
+    border: 3px red;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+
+/*------------------ Footer ----------------------------------*/
 footer{
     background-color: var(--footer-bg-color-light);
     height: 100px;
