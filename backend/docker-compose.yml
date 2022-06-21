@@ -12,6 +12,6 @@ services:
       - common_network
 
 networks:
-  common-network:
+  common_network:
     external:
       name: common_network  # must match the actual name of the network created in the external file
