@@ -367,7 +367,10 @@ footer .menu{
     list-style: none;
     justify-content: space-around;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
 
 footer a {
     text-decoration: none;
