@@ -9,9 +9,9 @@ services:
     ports:
       - 3001:3001
     networks:
-      - common-network
+      - common_network
 
 networks:
   common-network:
     external:
-      name: common-network  # must match the actual name of the network created in the external file
+      name: common_network  # must match the actual name of the network created in the external file

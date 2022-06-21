@@ -66,6 +66,7 @@ deploy_backend:
       export DC_APP_PORT=$APP_PORT &&
       export COMPOSE_PROJECT_NAME=$SERVICE_NAME &&
       cd ${PATH_BCK} &&
+      docker network create common_network || true &&
       docker-compose down &&
       docker-compose up -d"
   environment:
