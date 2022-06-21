@@ -13,6 +13,6 @@ const auth = {
 }
 const REDIRECT_URI='https://developers.google.com/oauthplayground'
 
-const BASE_URL = process.env.NODE_ENV==='development' ? '/api' : ''
+// const BASE_URL = process.env.NODE_ENV==='development' ? '/api' : ''
 const RECEIVING_EMAILS = process.env.RECEIVING_EMAILS
-export {auth, REDIRECT_URI, BASE_URL, RECEIVING_EMAILS}
+export {auth, REDIRECT_URI, RECEIVING_EMAILS}
