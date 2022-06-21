@@ -7,16 +7,31 @@ oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 
 
 async function send_mail(body) {
+
   let mailOptions = {
-    from: `${body.name} <${body.email}>`,
+    from: `ATpools <${auth.user}>`,
     to: RECEIVING_EMAILS,
-    subject: 'New quote request in ATpools',
+    subject: 'New quote request for ATpools',
+    sender: body.email,
+    replyTo: body.email,
     text: `${body.message} 
 ${body.name} 
 ${body.phone}`,
-    html: `<p>${body.message}</p>
-        <h4>${body.name}</h4>
-        <h4>${body.phone}</h4>`,
+    html: `
+        <div style="margin-bottom: 20px">
+            <p style="font-size: 22px">${body.message}</p>
+            <p style="font-size: 18px;">Best regards</div>
+            <p style="font-size: 20px;">${body.name}</p>
+        </div>
+        <div style="margin-bottom: 20px">
+            <a style="font-size: 20px" 
+            href="tel://${body.phone}">${body.phone}</a>
+        </div>
+        <div style="margin-bottom: 20px">
+            <a style="font-size: 20px"
+            href="mailto:${body.email}">${body.email}</a>
+        </div>
+       `,
   };
 
 
