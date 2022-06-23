@@ -88,6 +88,12 @@
     }
 }
 
+@media only screen and (min-width: 1440px) {
+        :root{
+            --translation-length: 1500px;
+        }
+}
+
 /* Force browsers to load CSS before showing the page
 must be the last line:*/
 #loadOverlay{display: none;}

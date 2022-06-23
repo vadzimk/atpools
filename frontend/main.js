@@ -46,7 +46,7 @@ inputs.forEach((input) => {
   }
 });
 
-/*------------------- Feature image animation --------------------------*/
+/*------------------- Service image animation --------------------------*/
 
 const images = document.querySelectorAll(".feature-img, #map")
 
@@ -73,6 +73,7 @@ const thank = document.querySelector('#thank-you')
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
+  e.stopPropagation();
   const data = Object.fromEntries(new FormData(form).entries());
 
   // const res = await postMessage(data); // Todo commented to test form animation
@@ -102,5 +103,7 @@ async function postMessage(data = {}) {
 
 function animateForm (form, thank){
 form.classList.add('move-form');
-thank.classList.add('move-thank-you');
+thank.classList.add('move-thank-you', 'show');
+thank.style.opacity = 1;
+// thank.classList.remove('hide');
 }

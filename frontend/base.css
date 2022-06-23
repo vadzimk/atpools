@@ -5,7 +5,6 @@ https://premierpoolservice.com/
 https://www.poolcalculator.com/pool-maintenance/
 */
 
-
 @import "type.css";
 
 :root {
@@ -20,6 +19,7 @@ https://www.poolcalculator.com/pool-maintenance/
     --form-bg-focus-light: #D1DFEF;
     --footer-bg-color-light: #767E90;
     --footer-text-color: #D9D9D9;
+    --translation-length: 1000px;
 }
 
 * {
@@ -49,6 +49,7 @@ header, .intro-container, #services, #service-areas, footer .menu {
     margin-left: auto;
     margin-right: auto;
 }
+
 /*HERO*/
 #hero {
     width: 100%;
@@ -61,7 +62,7 @@ header, .intro-container, #services, #service-areas, footer .menu {
     background-position: center 0; /*need js to animate*/
     background-repeat: no-repeat;
     background-attachment: fixed;
-/* TODO crop the image form the top or pic another with water at the top */
+    /* TODO crop the image form the top or pic another with water at the top */
 }
 
 .overlay {
@@ -92,7 +93,8 @@ header, .intro-container, #services, #service-areas, footer .menu {
     width: 250px;
     /*gap: 16px;*/
 }
-.intro-container{
+
+.intro-container {
     width: 100%;
     height: 100%;
     position: relative;
@@ -107,6 +109,7 @@ header {
     top: 16px;
 
 }
+
 .header-container {
     position: absolute;
     display: flex;
@@ -118,7 +121,7 @@ header {
     z-index: 10;
 }
 
-.btn, input[type="submit"]{
+.btn, input[type="submit"] {
     cursor: pointer;
     /*display: inline-block;*/
     width: 170px;
@@ -127,22 +130,24 @@ header {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
-    padding: 10px ;
+    padding: 10px;
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
     border-radius: 8px;
 
 }
+
 .btn {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
+
 .btn a {
     text-decoration: none;
     color: white;
 }
 
-.secondary{
+.secondary {
     background: var(--secondary2);
     color: white;
 }
@@ -156,6 +161,7 @@ article li {
     /*position: relative;  */
     width: 100%;
 }
+
 .service {
     min-height: 312px;
     position: relative;
@@ -182,15 +188,17 @@ article li {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
 }
-.service h3{
+
+.service h3 {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
 section > h3 {
     text-align: center;
 }
 
-.service:nth-of-type(2n){
+.service:nth-of-type(2n) {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 47.4%, rgba(0, 0, 0, 0.1) 100%), var(--green);
 }
 
@@ -206,6 +214,7 @@ article li {
     padding: 0;
     margin-bottom: 4px;
 }
+
 article h5 {
     margin-bottom: 8px;
 }
@@ -216,11 +225,12 @@ article h5 {
     justify-self: end;
 }
 
-#remodelling .feature-img{
+#remodelling .feature-img {
     background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%), url(images/figma-export/remodelling-sm.png);
     background-size: cover;
 }
-#remodelling .section-description{
+
+#remodelling .section-description {
     justify-self: end;
 }
 
@@ -229,21 +239,23 @@ article h5 {
     background-size: cover;
     justify-self: end;
 }
-.feature-img, #map{
-    transition:transform 0.25s ease;
+
+.feature-img, #map {
+    transition: transform 0.25s ease;
 }
+
 #map.enlarged {
     transform: scale(1.3) translateX(30px);
     z-index: 11;
 }
 
-.service:nth-of-type(odd)>.enlarged, #map .enlarged {
+.service:nth-of-type(odd) > .enlarged, #map .enlarged {
     border-radius: 8px;
     transform: scale(1.6) translateX(30px);
     z-index: 11;
 }
 
-.service:nth-of-type(even)>.enlarged{
+.service:nth-of-type(even) > .enlarged {
     border-radius: 8px;
     transform: scale(1.6) translateX(-30px);
     z-index: 11;
@@ -255,32 +267,34 @@ article h5 {
     text-align: center;
 }
 
-#service-areas img{
+#service-areas img {
     width: 100%;
     border-radius: 8px 8px 0 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 /*---------------------FORM-------------------*/
-#form-control{
-    margin: auto;
+#form-control {
+    margin: 0 auto;
+    max-width: 600px;
+    min-width: 340px;
     width: 60vw; /*60% of viewport width*/
     display: grid; /* stack child elements on top of each other*/
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 }
+
 form {
     grid-area: 1/1;
-    max-width: 600px;
-    min-width: 340px;
-    margin: 0 auto;
+
+    width: 100%;
     display: flex;
     flex-direction: column;
-    transition: transform 1.5s cubic-bezier(.36,-0.1,1,0), opacity 2s ease-in, visibility 0s linear 2s;
+    transition: transform 1.5s cubic-bezier(.36, -0.1, 1, 0), opacity 2s ease-in;
 }
 
-.move-form{
-    transform: translateX(1000px);
+.move-form {
+    transform: translateX(var(--translation-length));
     opacity: 0;
 }
 
@@ -300,6 +314,7 @@ label, input, textarea {
     transition: background-color 500ms;
     margin-bottom: 16px;
 }
+
 .input-container:hover {
     background-color: var(--form-bg-hover-light);
 }
@@ -319,7 +334,7 @@ label {
     /*color: rgba(0, 0, 0, 0.5);*/
     transform-origin: left top;
     user-select: none;
-    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
 
 }
 
@@ -337,7 +352,7 @@ input, textarea {
     font-size: 1rem;
 }
 
-textarea{
+textarea {
     padding-top: 24px;
 }
 
@@ -354,7 +369,7 @@ input:focus + label, textarea:focus + label {
 input:focus + label,
 input.is-valid + label,
 textarea:focus + label,
-textarea.is-valid + label{
+textarea.is-valid + label {
     transform: translateY(-100%) scale(0.75);
 }
 
@@ -366,9 +381,10 @@ input[type="submit"] {
     width: 50%;
     max-width: 180px;
 }
+
 /*---------------------------------------------------------*/
 
-#rates{
+#rates {
     display: block;
     margin: 32px 0 32px auto;
     text-align: end;
@@ -376,30 +392,40 @@ input[type="submit"] {
 
 /*---------------------- Thank you block ---------------------*/
 
-#thank-you{
+#thank-you {
     display: flex;
     flex-direction: column;
     font-size: 1.125rem;
     align-items: center;
     text-align: center;
     height: 312px;
-    padding: 45px 16px 16px;
-    width: 60vw; /*60% of viewport width*/
+    margin: 45px auto auto auto;
+    /*width: 60vw; !*60% of viewport width*!*/
     position: relative;
-    left: -1000px;
-    transition: transform 1.5s cubic-bezier(.36,-0.1,1,0), opacity 2.2s ease-in 2s;
+    left: calc(-1 * var(--translation-length));
     grid-area: 1/1;
+    transition: transform 1.8s cubic-bezier(0,.57,0,.85) 2s,  opacity 2s ease-in 2s;
 }
 
-.move-thank-you{
-    transform: translateX(1000px);
-    opacity: 100%;
+
+/*.hide{*/
+/*    opacity: 0;*/
+/*    !*visibility: hidden;*!*/
+/*}*/
+
+/*.show{*/
+/*    opacity: 1;*/
+/*}*/
+
+.move-thank-you {
+    transform: translateX(var(--translation-length));
 }
+
 #thank-you h4 {
     letter-spacing: 1px;
 }
 
-#envelope{
+#envelope {
     background-image: url(images/figma-export/envelope-light.svg);
     width: 80px;
     height: 80px;
@@ -411,12 +437,13 @@ input[type="submit"] {
 
 
 /*------------------ Footer ----------------------------------*/
-footer{
+footer {
     background-color: var(--footer-bg-color-light);
     height: 100px;
     color: var(--footer-text-color);
 }
-footer .menu{
+
+footer .menu {
     display: flex;
     flex-direction: row;
     list-style: none;
