@@ -16,3 +16,5 @@ https://www.figma.com/file/DPXTuZIoryoZcszOXbssIi/pools?node-id=58%3A1871
 #### Implemented in vanilla css, html, js
 
 Static page with email form using a backend worker script.
+
+![Form animation and email delivery demo](./form-demo.gif "Form animation and email delivery demo")

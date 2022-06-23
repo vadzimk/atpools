@@ -7,27 +7,30 @@ const oauth2Client = new google.auth.OAuth2(auth.clientId, auth.clientSecret, RE
 oauth2Client.setCredentials({refresh_token: auth.refreshToken})
 
 async function send_mail(body) {
+  const bfs = 20; // base font size
   let mailOptions = {
     from: `ATpools <${auth.user}>`,
     to: RECEIVING_EMAILS,
-    subject: 'New quote request for ATpools',
+    subject: `New quote request from ${body.name}`,
     sender: body.email,
     replyTo: body.email,
     text: `${body.message} 
 ${body.name} 
 ${body.phone}`,
     html: `
-        <div style="margin-bottom: 20px">
-            <p style="font-size: 22px">${body.message}</p>
-            <p style="font-size: 18px;">Best regards</div>
-            <p style="font-size: 20px;">${body.name}</p>
+        <div style="margin-bottom: ${bfs}px">
+            <p style="font-size: ${1.1*bfs}px">${body.message}</p>
+            <hr style="border: 0;
+    border-bottom: 1px dotted #ccc;
+    background: #999;"/>
+            <p style="font-size: ${bfs}px;">${body.name}</p>
         </div>
-        <div style="margin-bottom: 20px">
-            <a style="font-size: 20px" 
+        <div style="margin-bottom: ${bfs}px">
+            <a style="font-size: ${bfs}px" 
             href="tel://${body.phone}">${body.phone}</a>
         </div>
-        <div style="margin-bottom: 20px">
-            <a style="font-size: 20px"
+        <div style="margin-bottom: ${bfs}px">
+            <a style="font-size: ${bfs}px"
             href="mailto:${body.email}">${body.email}</a>
         </div>
        `,

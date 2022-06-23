@@ -76,14 +76,13 @@ form.addEventListener('submit', async (e) => {
   e.stopPropagation();
   const data = Object.fromEntries(new FormData(form).entries());
 
-  // const res = await postMessage(data); // Todo commented to test form animation
+  const res = await postMessage(data); // Todo commented to test form animation
+  // const res = {status: 500}
   animateForm(form, thank)
-  // if (res.status === 200) {
-  //   // form.style.display = 'none';
-  //   // thank.style.display = 'flex';
-  // } else {
-  //   console.log('error: status', res.status)
-  // }
+
+  if (res.status !== 200) {
+    thank.innerHTML = "<h4>Sorry,<br>something went wrong on our end.</h4> "
+  }
 });
 
 async function postMessage(data = {}) {
@@ -101,9 +100,9 @@ async function postMessage(data = {}) {
 
 /*--------------------Form animation -----------------------*/
 
-function animateForm (form, thank){
-form.classList.add('move-form');
-thank.classList.add('move-thank-you', 'show');
-thank.style.opacity = 1;
+function animateForm(form, thank) {
+  form.classList.add('move-form');
+  thank.classList.add('move-thank-you', 'show');
+  thank.style.opacity = 1;
 // thank.classList.remove('hide');
 }
