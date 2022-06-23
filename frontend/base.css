@@ -262,14 +262,26 @@ article h5 {
 }
 
 /*---------------------FORM-------------------*/
-form {
+#form-control{
+    margin: auto;
     width: 60vw; /*60% of viewport width*/
+    display: grid; /* stack child elements on top of each other*/
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+form {
+    grid-area: 1/1;
     max-width: 600px;
     min-width: 340px;
     margin: 0 auto;
-
     display: flex;
     flex-direction: column;
+    transition: transform 1.5s cubic-bezier(.36,-0.1,1,0), opacity 2s ease-in, visibility 0s linear 2s;
+}
+
+.move-form{
+    transform: translateX(1000px);
+    opacity: 0;
 }
 
 label, input, textarea {
@@ -284,7 +296,7 @@ label, input, textarea {
     background-color: var(--form-bg-light);
     position: relative;
     border-radius: 4px;
-   min-height: 56px;
+    min-height: 56px;
     transition: background-color 500ms;
     margin-bottom: 16px;
 }
@@ -370,10 +382,19 @@ input[type="submit"] {
     font-size: 1.125rem;
     align-items: center;
     text-align: center;
-    min-height: 312px;
+    height: 312px;
     padding: 45px 16px 16px;
+    width: 60vw; /*60% of viewport width*/
+    position: relative;
+    left: -1000px;
+    transition: transform 1.5s cubic-bezier(.36,-0.1,1,0), opacity 2.2s ease-in 2s;
+    grid-area: 1/1;
 }
 
+.move-thank-you{
+    transform: translateX(1000px);
+    opacity: 100%;
+}
 #thank-you h4 {
     letter-spacing: 1px;
 }

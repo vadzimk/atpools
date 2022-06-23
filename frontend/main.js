@@ -74,14 +74,15 @@ const thank = document.querySelector('#thank-you')
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form).entries());
-  console.log("form data", data)
-  const res = await postMessage(data);
-  if (res.status === 200) {
-    form.style.display = 'none';
-    thank.style.display = 'flex';
-  } else {
-    console.log('error: status', res.status)
-  }
+
+  // const res = await postMessage(data); // Todo commented to test form animation
+  animateForm(form, thank)
+  // if (res.status === 200) {
+  //   // form.style.display = 'none';
+  //   // thank.style.display = 'flex';
+  // } else {
+  //   console.log('error: status', res.status)
+  // }
 });
 
 async function postMessage(data = {}) {
@@ -94,4 +95,12 @@ async function postMessage(data = {}) {
     referrerPolicy: 'no-referrer',
     body: JSON.stringify(data)
   });
+}
+
+
+/*--------------------Form animation -----------------------*/
+
+function animateForm (form, thank){
+form.classList.add('move-form');
+thank.classList.add('move-thank-you');
 }
