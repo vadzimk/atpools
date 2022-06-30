@@ -15,7 +15,7 @@
 
 #### 2. Implemented in vanilla css, html, js
 
-Static page with email form using express backend.
+Home page with light/dark themes and animated email form using express backend. 
 
 ![Form animation and email delivery demo](./form-demo.gif "Form animation and email delivery demo")
 
