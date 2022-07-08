@@ -10,11 +10,17 @@ stages:
 
 build_backend:
   stage: build
-  image: docker
-  services:
-    - docker:dind
+  image: docker:20.10.17
   variables:
+    # using "docker" as the host is only possible if you alias the service below
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
     SERVICE_NAME: "backend"
+  services:
+    - name: docker:20.10.17-dind
+      alias: docker
+      command: [ "--tls=false" ]
   before_script:
     - export IMAGE_NAME=$CI_REGISTRY_IMAGE/$SERVICE_NAME
     - apk add jq # install app to parse package.json
