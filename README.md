@@ -19,4 +19,4 @@ Home page with light/dark themes and animated email form using express backend.
 
 ![Form animation and email delivery demo](./form-demo.gif "Form animation and email delivery demo")
 
-#### 3. Configured a CI pipeline in Gitlab that automatically deploys changes to the VM instance in a Docker container.
+#### 3. Gitlab CI pipeline automatically builds and deploys new versions of the application.
