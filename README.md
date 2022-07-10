@@ -17,6 +17,6 @@
 
 Home page with light/dark themes and animated email form using express backend. 
 
-![Form animation and email delivery demo](./form-demo.gif "Form animation and email delivery demo")
+![Form animation and email delivery demo](./form-demo1.gif "Form animation and email delivery demo")
 
 #### 3. Gitlab CI pipeline automatically builds and deploys new versions of the application.
