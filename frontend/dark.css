@@ -44,9 +44,9 @@ article h3, section h3 {
 input, textarea {
     color: white;
 }
-label {
-    font-weight: bold;
-}
+/*label {*/
+/*    font-weight: bold;*/
+/*}*/
 
 #envelope{
     background-image: url(images/figma-export/envelope-dark.svg);

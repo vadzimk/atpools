@@ -50,6 +50,10 @@ header, .intro-container, #services, #service-areas, footer .menu {
     margin-right: auto;
 }
 
+#logo{
+    height: 2.3rem;
+}
+
 /*HERO*/
 #hero {
     width: 100%;
@@ -129,7 +133,7 @@ header {
     text-align: center;
     text-decoration: none;
     font-size: 1.1rem;
-    font-weight: bold;
+    font-weight: 300;
     padding: 10px;
     filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.25));
     border-radius: 8px;

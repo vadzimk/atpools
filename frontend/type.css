@@ -1,14 +1,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-
+/*@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
 html {
-    font-size: 94%;
+    font-size: 100%;
 }/*15px*/
 
 body {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
+    font-family: 'Mitr', sans-serif;
+    font-weight: 200;
     line-height: 1.5;
 }
 
@@ -87,7 +87,7 @@ h5 {font-size: 1.125rem;}
     li{
 
         font-style: normal;
-        font-weight: 400;
+        font-weight: 200;
         font-size: 20px;
         line-height: 25px;
     }

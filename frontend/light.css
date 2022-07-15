@@ -5,6 +5,9 @@
         background-image: url(images/figma-export/hero-light-md.png);
         height: 400px;
     }
+    #logo{
+        height: 3rem;
+    }
 
     #intro {
         width: 324px;
@@ -46,6 +49,10 @@
     #intro {
         width: 448px;
         margin-left: 80px;
+    }
+
+    #logo{
+        height: 3.7rem;
     }
 
     .header-container {
