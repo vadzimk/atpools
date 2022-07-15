@@ -3,21 +3,24 @@ const btnMode = document.querySelector('#mode')
 const theme = document.querySelector('#theme-link')
 const preferDark = window.matchMedia('(prefers-color-scheme: dark)')
 const mapImg = document.querySelector('#map')
-
+const fav = document.querySelector('#favicon')
 // NOTE uncomment this for production
 // synchronizes theme with user OS preferences
 if (preferDark.matches) {
   theme.href = 'dark.css'
+  fav.href = 'fav-dark.ico'
 }
 
 btnMode.addEventListener('click', function (e) {
   e.stopPropagation()
   if (theme.getAttribute('href') === 'light.css') {
     theme.href = 'dark.css'
+    fav.href = 'fav-dark.ico'
     btnMode.setAttribute('src', 'images/figma-export/mode-light.svg')
     mapImg.setAttribute('src', 'images/figma-export/map2dark.png')
   } else {
     theme.href = 'light.css'
+    fav.href = 'fav-light.ico'
     btnMode.setAttribute('src', 'images/figma-export/mode-dark.svg')
     mapImg.setAttribute('src', 'images/figma-export/map2light.png')
 
