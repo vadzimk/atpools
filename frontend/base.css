@@ -29,6 +29,7 @@ https://www.poolcalculator.com/pool-maintenance/
 
 html {
     box-sizing: border-box; /* change default box size behavior*/
+    height: 100%;
 
 }
 
@@ -42,6 +43,7 @@ body {
     margin: 0;
     background: var(--body-bg-color);
     color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
 }
 
 header, .intro-container, #services, #service-areas, footer .menu {
@@ -67,6 +69,7 @@ header, .intro-container, #services, #service-areas, footer .menu {
     background-repeat: no-repeat;
     background-attachment: fixed;
     /* TODO crop the image form the top or pic another with water at the top */
+    height: 100%;
 }
 
 .overlay {
